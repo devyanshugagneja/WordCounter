@@ -9,3 +9,4 @@ preferable to make most functions in App.js so that user has more control
 bootstrap integration - css & js
 Switch - which has been updated to Routes now.
 React Router
+For Navigation, change href -> to, anchor tag to Link in navbar.

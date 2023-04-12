@@ -8,6 +8,7 @@ import {
   BrowserRouter as Router,
   Routes as Switch,
   Route,
+  // Link,
 } from "react-router-dom";
 import "./App.css";
 
@@ -46,9 +47,9 @@ function App() {
       <div className="container my-3">
         <Router>
           <Switch>
-            //? old way to use Switch, but in updated version, Switch has been
+            {/* //? old way to use Switch, but in updated version, Switch has been
             //? replaced with Routes,  thats why Routes as Switch was imported.
-            //? In the updated method, we use element.
+            //? In the updated method, we use element. */}
             {/* <Route path="/about">
                 <About/>
               </Route> */}
