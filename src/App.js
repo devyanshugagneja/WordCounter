@@ -4,11 +4,7 @@ import About from "./components/About";
 import Navbar from "./components/Navbar";
 import TextForm from "./components/Textform";
 import Alert from "./components/Alert";
-import {
-  BrowserRouter as Router,
-  Routes as Switch,
-  Route,
-} from "react-router-dom";
+import { BrowserRouter as Router, Routes , Route,  } from "react-router-dom";
 import "./App.css";
 
 function App() {
@@ -37,38 +33,33 @@ function App() {
   };
   return (
     <>
-      <Navbar
-        title="TextUtils"
-        mode={mode}
-        aboutText="About"
-        toggleMode={toggleMode}
-      />
-      <div className="container my-3">
-        <Router>
-          <Switch>
-            //? old way to use Switch, but in updated version, Switch has been
-            //? replaced with Routes,  thats why Routes as Switch was imported.
-            //? In the updated method, we use element.
-            {/* <Route path="/about">
-                <About/>
-              </Route> */}
-            <Route path="/about" element={<About />} />
-            <Route
-              path="/"
-              element={
-                <TextForm
-                  showAlert={showAlert}
-                  heading="Enter the text to analyze below"
-                  mode={mode}
-                />
-              }
-            />
-          </Switch>
-        </Router>
+      
+      
+      <Router>
+        <Navbar title="Text Edits" mode={mode} toggleMode={toggleMode} />
         <Alert alert={alert} />
-      </div>
+        <div className="container my-3">
+          <Routes >
+            <Route path="/about" element={<About mode={mode}/>}>
+              
+            </Route>
+
+            <Route path="/" element={  <TextForm 
+                showAlert={showAlert}
+                heading="Enter the Text below to Analyze"
+                mode={mode}
+              />}>
+            
+            </Route>
+          </Routes>
+          
+        </div>
+      </Router>
     </>
   );
 }
+        
+      
+ 
 
 export default App;
